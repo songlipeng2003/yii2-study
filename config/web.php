@@ -38,6 +38,16 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                '<controller:\d+>/<id:\d+>/<action:(create|update|delete)>' => '<controller>/<action>',
+                '<controller:\d+>/<id:\d+>' => '<controller>/view',
+                '<controller:(blog)>s' => '<controller>/index',
+            ],
+        ],
     ],
     'params' => $params,
 ];
