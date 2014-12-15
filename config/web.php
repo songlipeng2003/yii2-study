@@ -7,8 +7,27 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [
-        'admin' => 'app\modules\admin\Module',
+        // 'admin' => 'app\modules\admin\Module',
+        'admin2' => ['class' => 'mdm\admin\Module',
+            'layout' => 'left-menu', // it can be '@path/to/your/layout'.
+            'controllerMap' => [
+                'assignment' => [
+                    'class' => 'mdm\admin\controllers\AssignmentController',
+                    'userClassName' => 'app\models\AdminUser',
+                    'idField' => 'id'
+                ],
+            ],
+            // 'menus' => [
+            //     'assignment' => [
+            //         'label' => 'Grand Access' // change label
+            //     ],
+            //     'route' => null, // disable menu route 
+            // ]
+        ]
     ],
+    // 'aliases' => [
+    //     '@mdm/admin' => '',
+    // ]
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -46,10 +65,19 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                '<controller:\d+>/<id:\d+>/<action:(create|update|delete)>' => '<controller>/<action>',
-                '<controller:\d+>/<id:\d+>' => '<controller>/view',
-                '<controller:(blog)>s' => '<controller>/index',
+                // '<controller:\d+>/<id:\d+>/<action:(create|update|delete)>' => '<controller>/<action>',
+                // '<controller:\d+>/<id:\d+>' => '<controller>/view',
+                // '<controller:\d+>s' => '<controller>/index',
             ],
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\DbManager'
+        ],
+        'as access' => [
+            'class' => 'mdm\admin\components\AccessControl',
+            'allowActions' => [
+                'admin2/*', // add or remove allowed actions to this list
+            ]
         ],
     ],
     'params' => $params,
