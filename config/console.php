@@ -27,5 +27,8 @@ return [
         ],
         'db' => $db,
     ],
+    'controllerMap' => [
+        'mongodb-migrate' => 'yii\mongodb\console\controllers\MigrateController'
+    ],
     'params' => $params,
 ];
