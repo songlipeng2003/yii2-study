@@ -4,6 +4,8 @@ namespace app\models;
 
 use Yii;
 
+use yii\mongodb\ActiveRecord;
+
 /**
  * This is the model class for collection "post".
  *
@@ -13,14 +15,14 @@ use Yii;
  * @property Timestamp $createTime
  * @property Timestamp $updateTime
  */
-class Post extends \yii\mongodb\ActiveRecord
+class Post extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function collectionName()
     {
-        return ['post', 'post'];
+        return 'post';
     }
 
     /**
@@ -59,5 +61,21 @@ class Post extends \yii\mongodb\ActiveRecord
             'createTime' => Yii::t('app', 'Create Time'),
             'updateTime' => Yii::t('app', 'Update Time'),
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        $now = new \MongoDate(time());
+        if (parent::beforeSave($insert)) {
+            if($insert){
+                $this->createTime = $now;
+                $this->updateTime = $now;
+            }else{
+                $this->updateTime = $now;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

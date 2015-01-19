@@ -31,8 +31,16 @@ $this->params['breadcrumbs'][] = $this->title;
             '_id',
             'name',
             'content',
-            'createTime',
-            'updateTime',
+            [
+                'class'=>'yii\grid\DataColumn',
+                'attribute'=>'createTime',
+                'value'=>strftime('%Y-%m-%d %H:%I:%S', $model->createTime->sec)
+            ],
+            [
+                'class'=>'yii\grid\DataColumn',
+                'attribute'=>'updateTime',
+                'value'=>strftime('%Y-%m-%d %H:%I:%S', $model->updateTime->sec)
+            ]
         ],
     ]) ?>
 
