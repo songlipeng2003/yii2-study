@@ -18,7 +18,8 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "mdmsoft/yii2-admin": "*"
+        "mdmsoft/yii2-admin": "*",
+        "gilek/yii2-gtreetable": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
