@@ -7,7 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [
-        // 'admin' => 'app\modules\admin\Module',
+        'admin' => 'app\modules\admin\Module',
         'admin2' => ['class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // it can be '@path/to/your/layout'.
             'controllerMap' => [

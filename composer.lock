@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "85f16f5361062608a1ab09ae5a1fa63e",
+    "hash": "d500cc1776f526234162215c3077d23a",
+    "content-hash": "55c46bbb3bda11aad767d6e42d31a130",
     "packages": [
         {
             "name": "bower-asset/URIjs",
@@ -417,8 +418,8 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/creocoder/yii2-nested-set-behavior.git",
-                "reference": "496a1ec0b19224e18f469c019db7e9d1758cf7a2"
+                "url": "git@github.com:creocoder/yii2-nested-set-behavior.git",
+                "reference": "ac447e98b644eed56bbbbcb695d7ecddc23af90e"
             },
             "dist": {
                 "type": "zip",
@@ -741,6 +742,57 @@
                 "mailer"
             ],
             "time": "2014-12-05 14:17:46"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "11a353b704488944a7477b229d119fe1cfa56f68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/vlucas/phpdotenv/11a353b704488944a7477b229d119fe1cfa56f68.zip",
+                "reference": "11a353b704488944a7477b229d119fe1cfa56f68",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause-Attribution"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2016-02-11 08:44:10"
         },
         {
             "name": "yiisoft/yii2",
